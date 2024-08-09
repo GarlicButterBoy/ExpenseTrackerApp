@@ -40,7 +40,7 @@ function ExpensesOverview() {
           title: "All Expenses",
           tabBarLabel: "All",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="calendar" size={size} color={color} />
+            <Ionicons name="hourglass" size={size} color={color} />
           ),
         }}
       />
