@@ -25,8 +25,8 @@ export default function App() {
       <StatusBar style="auto" />
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name="ExpensesOverview" component={ExpensesOverview} />
           <Stack.Screen name="ManageExpenses" component={ManageExpenses} />
+          <Stack.Screen name="E"/>
         </Stack.Navigator>
       </NavigationContainer>
     </>
