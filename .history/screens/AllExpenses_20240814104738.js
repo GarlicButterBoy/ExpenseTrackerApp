@@ -5,11 +5,18 @@ import ExpensesList from "../components/ExpensesOutput/ExpensesList";
 function AllExpenses() {
   return (
     <>
-      <ExpensesOutput expensesPeriod="Total" />
+      <View style={styles.rootContainer}>
+        <ExpensesOutput expensesPeriod="Total" />
+        <ExpensesList />
+      </View>
     </>
   );
 }
 
 export default AllExpenses;
 
-
+const styles = StyleSheet.create({
+  rootContainer: {
+    flex: 2,
+  },
+});

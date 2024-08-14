@@ -12,4 +12,8 @@ function AllExpenses() {
 
 export default AllExpenses;
 
-
+const styles = StyleSheet.create({
+  rootContainer: {
+    flex: 1,
+  },
+});
