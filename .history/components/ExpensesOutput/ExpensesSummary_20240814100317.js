@@ -8,8 +8,8 @@ function ExpensesSummary({ expenses, periodName }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.period}>{periodName}</Text>
-      <Text style={styles.sum}>${expensesSum.toFixed(2)}</Text>
+      <Text>{periodName}</Text>
+      <Text>${expensesSum.toFixed(2)}</Text>
     </View>
   );
 }

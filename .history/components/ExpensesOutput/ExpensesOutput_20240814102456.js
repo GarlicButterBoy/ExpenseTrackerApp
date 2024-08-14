@@ -98,9 +98,8 @@ export default ExpensesOutput;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingHorizontal: 24,
-    paddingTop: 24,
-    paddingBottom: 0,
+        paddingHorizontal: 24, \
+      paddingTop: 24
     backgroundColor: GlobalStyles.colors.primary700,
   },
 });
