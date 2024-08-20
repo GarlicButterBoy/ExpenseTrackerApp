@@ -6,10 +6,7 @@ function ExpenseItem({ description, amount, date }) {
   function expensePressHandler() {}
 
   return (
-    <Pressable
-      onPress={expensePressHandler}
-      style={({ pressed }) => pressed && styles.pressed}
-    >
+    <Pressable onPress={expensePressHandler}>
       <View style={styles.item}>
         <View>
           <Text style={[styles.textBase, styles.description]}>
