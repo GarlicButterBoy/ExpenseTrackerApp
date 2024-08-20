@@ -19,13 +19,12 @@ function ManageExpenses({ route, navigation }) {
     <View style={styles.container}>
       {isEditing && (
         <View style={styles.deleteContainer}>
-          <IconButton
-            icon="trash"
-            color={GlobalStyles.colors.error500}
-            size={36}
-            onPress={deleteExpenseHandler}
-          />
-        </View>
+        <IconButton
+          icon="trash"
+          color={GlobalStyles.colors.error500}
+          size={36}
+          onPress={deleteExpenseHandler}
+        />
       )}
     </View>
   );
