@@ -3,7 +3,6 @@ import IconButton from "../components/UI/IconButton";
 import Button from "../components/UI/Button";
 import { GlobalStyles } from "../constants/styles";
 import { ExpensesContext } from "../store/expenses-context";
-import { useContext } from "react";
 
 function ManageExpenses({ route, navigation }) {
   const expensesCtx = useContext(ExpensesContext);
@@ -19,7 +18,7 @@ function ManageExpenses({ route, navigation }) {
   );
 
   function deleteExpenseHandler() {
-    expensesCtx.deleteExpense(editedExpenseId);
+    expensesCtx.deleteExpense
     navigation.goBack();
   }
 
@@ -28,20 +27,6 @@ function ManageExpenses({ route, navigation }) {
   }
 
   function confirmHandler() {
-    if (isEditing) {
-      expensesCtx.updateExpense(editedExpenseId, {
-        description: "Test!!!!!",
-        amount: 39.99,
-        date: new Date("2024-08-20"),
-      });
-    } else {
-      expensesCtx.addExpense({
-        description: "Test",
-        amount: 19.99,
-        date: new Date("2024-08-21"),
-      });
-    }
-
     navigation.goBack();
   }
 
