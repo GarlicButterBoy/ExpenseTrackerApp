@@ -23,10 +23,10 @@ function ManageExpenses({ route, navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.buttons}>
-        <Button mode="flat" onPress={cancelHandler} style={styles.button}>
+        <Button mode="flat" onPress={cancelHandler} style={styles.buttons}>
           Cancel
         </Button>
-        <Button onPress={confirmHandler} style={styles.button}>
+        <Button onPress={confirmHandler} style={styles.buttons}>
           {isEditing ? "Update" : "Add"}
         </Button>
       </View>
