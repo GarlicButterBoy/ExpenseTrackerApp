@@ -3,7 +3,8 @@ import ExpensesSummary from "./ExpensesSummary";
 import ExpensesList from "./ExpensesList";
 import { GlobalStyles } from "../../constants/styles";
 
-function ExpensesOutput({ expenses, expensesPeriod, fallbackText }) {
+function ExpensesOutput({ expenses, expensesPeriod }) {
+  const fallbackText = "There have been no expenses made within the last 7 days.";
   let content = <Text style={styles.infoText}>{fallbackText}</Text>;
 
   if (expenses.length > 0) {

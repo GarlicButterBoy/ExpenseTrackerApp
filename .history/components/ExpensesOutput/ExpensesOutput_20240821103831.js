@@ -3,7 +3,7 @@ import ExpensesSummary from "./ExpensesSummary";
 import ExpensesList from "./ExpensesList";
 import { GlobalStyles } from "../../constants/styles";
 
-function ExpensesOutput({ expenses, expensesPeriod, fallbackText }) {
+function ExpensesOutput({ expenses, expensesPeriod }) {
   let content = <Text style={styles.infoText}>{fallbackText}</Text>;
 
   if (expenses.length > 0) {
