@@ -49,7 +49,7 @@ function ExpenseForm() {
           keyboardType: "default",
           onChangeText: inputChangedHandler.bind(this, "description"),
           multiline: true,
-          value: inputValues.description,
+          value: inputValues.amount,
           //autoCapitalize: "words", //default is sentences
           //autoCorrect: false, //default is true
         }}

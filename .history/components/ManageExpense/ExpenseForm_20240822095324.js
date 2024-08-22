@@ -28,7 +28,7 @@ function ExpenseForm() {
           textInputConfig={{
             keyboardType: "decimal-pad",
             onChangeText: inputChangedHandler.bind(this, "amount"),
-            value: inputValues.amount,
+            value: inputValues.,
           }}
         />
         <Input
@@ -39,7 +39,6 @@ function ExpenseForm() {
             keyboardType: "default",
             maxLength: 10,
             onChangeText: inputChangedHandler.bind(this, "date"),
-            value: inputValues.date,
           }}
         />
       </View>
@@ -49,7 +48,6 @@ function ExpenseForm() {
           keyboardType: "default",
           onChangeText: inputChangedHandler.bind(this, "description"),
           multiline: true,
-          value: inputValues.description,
           //autoCapitalize: "words", //default is sentences
           //autoCorrect: false, //default is true
         }}

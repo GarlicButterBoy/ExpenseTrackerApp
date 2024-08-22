@@ -39,7 +39,7 @@ function ExpenseForm() {
             keyboardType: "default",
             maxLength: 10,
             onChangeText: inputChangedHandler.bind(this, "date"),
-            value: inputValues.date,
+            value: inputValues.amount,
           }}
         />
       </View>
@@ -49,7 +49,6 @@ function ExpenseForm() {
           keyboardType: "default",
           onChangeText: inputChangedHandler.bind(this, "description"),
           multiline: true,
-          value: inputValues.description,
           //autoCapitalize: "words", //default is sentences
           //autoCorrect: false, //default is true
         }}

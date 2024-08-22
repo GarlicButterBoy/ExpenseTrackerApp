@@ -4,7 +4,9 @@ import Button from "../components/UI/Button";
 import { GlobalStyles } from "../constants/styles";
 import { ExpensesContext } from "../store/expenses-context";
 import { useContext } from "react";
-import ExpenseForm from "../components/ManageExpense/ExpenseForm";
+import ExpenseForm, {
+  ManageExpense,
+} from "../components/ManageExpense/ExpenseForm";
 
 function ManageExpenses({ route, navigation }) {
   const expensesCtx = useContext(ExpensesContext);

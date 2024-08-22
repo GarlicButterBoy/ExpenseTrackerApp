@@ -1,34 +1,19 @@
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import Input from "./Input";
-import { useState } from "react";
 
 function ExpenseForm() {
-  const [inputValues, setInputValues] = useState({
-    amount: "",
-    date: "",
-    description: "",
-  });
-
-  function inputChangedHandler(inputIdentifier, enteredValue) {
-    setInputValues((currentInputValues) => {
-      return {
-        ...currentInputValues,
-        [inputIdentifier]: enteredValue,
-      };
-    });
-  }
+  function amountChangedHandler() {}
 
   return (
     <View style={styles.form}>
-      <Text style={styles.title}>Your Expense</Text>
+      <Text>Your Expense</Text>
       <View style={styles.inputsRow}>
         <Input
           label="Amount"
           style={styles.rowInput}
           textInputConfig={{
             keyboardType: "decimal-pad",
-            onChangeText: inputChangedHandler.bind(this, "amount"),
-            value: inputValues.amount,
+            onChangeText: amountChangedHandler,
           }}
         />
         <Input
@@ -38,8 +23,7 @@ function ExpenseForm() {
             placeholder: "YYYY-MM-DD",
             keyboardType: "default",
             maxLength: 10,
-            onChangeText: inputChangedHandler.bind(this, "date"),
-            value: inputValues.date,
+            onChangeText: () => {},
           }}
         />
       </View>
@@ -47,9 +31,8 @@ function ExpenseForm() {
         label="Description"
         textInputConfig={{
           keyboardType: "default",
-          onChangeText: inputChangedHandler.bind(this, "description"),
+          onChangeText: () => {},
           multiline: true,
-          value: inputValues.description,
           //autoCapitalize: "words", //default is sentences
           //autoCorrect: false, //default is true
         }}
@@ -61,13 +44,7 @@ function ExpenseForm() {
 export default ExpenseForm;
 
 const styles = StyleSheet.create({
-  title: {
-    fontSize: 24,
-    fontWeight: "bold",
-    color: "white",
-    marginVertical: 24,
-    textAlign: "center",
-  },
+    title: {}
   form: {
     marginTop: 40,
   },
