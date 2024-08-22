@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import IconButton from "../components/UI/IconButton";
 import Button from "../components/UI/Button";
 import { GlobalStyles } from "../constants/styles";
@@ -47,7 +47,7 @@ function ManageExpenses({ route, navigation }) {
 
   return (
     <View style={styles.container}>
-      <TextInput />
+      <Y
       <View style={styles.buttons}>
         <Button mode="flat" onPress={cancelHandler} style={styles.button}>
           Cancel
