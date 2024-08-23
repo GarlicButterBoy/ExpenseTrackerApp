@@ -78,7 +78,7 @@ function ExpenseForm({ onCancel, onSubmit, submitButtonLabel, defaultValues }) {
         <Input
           label="Amount"
           style={styles.rowInput}
-          invalid={!inputs.amount.isValid}
+          invalid={!input.amount.isValid}
           textInputConfig={{
             keyboardType: "decimal-pad",
             onChangeText: inputChangedHandler.bind(this, "amount"),
@@ -88,7 +88,7 @@ function ExpenseForm({ onCancel, onSubmit, submitButtonLabel, defaultValues }) {
         <Input
           label="Date"
           style={styles.rowInput}
-          invalid={!inputs.date.isValid}
+          invalid={!input.date.isValid}
           textInputConfig={{
             placeholder: "YYYY-MM-DD",
             keyboardType: "default",
@@ -100,7 +100,7 @@ function ExpenseForm({ onCancel, onSubmit, submitButtonLabel, defaultValues }) {
       </View>
       <Input
         label="Description"
-        invalid={!inputs.description.isValid}
+        invalid={!input.description.isValid}
         textInputConfig={{
           keyboardType: "default",
           onChangeText: inputChangedHandler.bind(this, "description"),
@@ -161,4 +161,8 @@ const styles = StyleSheet.create({
     minWidth: 120,
     marginHorizontal: 8,
   },
+  invalidLabel: {
+    color: GlobalStyles.colors.error500,
+  },
+  invalidInput: {backgroundColor: GlobalStyles.colors.},
 });

@@ -78,7 +78,6 @@ function ExpenseForm({ onCancel, onSubmit, submitButtonLabel, defaultValues }) {
         <Input
           label="Amount"
           style={styles.rowInput}
-          invalid={!inputs.amount.isValid}
           textInputConfig={{
             keyboardType: "decimal-pad",
             onChangeText: inputChangedHandler.bind(this, "amount"),
@@ -88,7 +87,6 @@ function ExpenseForm({ onCancel, onSubmit, submitButtonLabel, defaultValues }) {
         <Input
           label="Date"
           style={styles.rowInput}
-          invalid={!inputs.date.isValid}
           textInputConfig={{
             placeholder: "YYYY-MM-DD",
             keyboardType: "default",
@@ -100,7 +98,6 @@ function ExpenseForm({ onCancel, onSubmit, submitButtonLabel, defaultValues }) {
       </View>
       <Input
         label="Description"
-        invalid={!inputs.description.isValid}
         textInputConfig={{
           keyboardType: "default",
           onChangeText: inputChangedHandler.bind(this, "description"),

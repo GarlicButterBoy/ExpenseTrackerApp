@@ -9,7 +9,7 @@ function Input({ label, style, textInputConfig, invalid }) {
   }
 
   if (invalid) {
-    inputStyles.push(styles.invalidInput);
+    inputStyles.
   }
 
   return (
@@ -17,7 +17,10 @@ function Input({ label, style, textInputConfig, invalid }) {
       <Text style={[styles.label, invalid && styles.invalidLabel]}>
         {label}
       </Text>
-      <TextInput {...textInputConfig} style={inputStyles} />
+      <TextInput
+        {...textInputConfig}
+        style={[inputStyles, invalid && styles.invalidInput]}
+      />
     </View>
   );
 }
