@@ -8,15 +8,15 @@ function ExpenseForm({ onCancel, onSubmit, submitButtonLabel, defaultValues }) {
   const [inputs, setInputs] = useState({
     amount: {
       value: defaultValues ? defaultValues.amount.toString() : "",
-      isValid: true,
+      isValid: defaultValues ? true : false,
     },
     date: {
       value: defaultValues ? getFormattedDate(defaultValues.date) : "",
-      isValid: true,
+      isValid: defaultValues ? true : false,
     },
     description: {
       value: defaultValues ? defaultValues.description : "",
-      isValid: true,
+      isValid: defaultValues ? true : false,
     },
   });
 
@@ -65,11 +65,6 @@ function ExpenseForm({ onCancel, onSubmit, submitButtonLabel, defaultValues }) {
     }
   }
 
-  const formIsInvalid =
-    !inputs.amount.isValid ||
-    !inputs.date.isValid ||
-    !inputs.description.isValid;
-
   return (
     <View style={styles.form}>
       <Text style={styles.title}>Your Expense</Text>
@@ -105,10 +100,8 @@ function ExpenseForm({ onCancel, onSubmit, submitButtonLabel, defaultValues }) {
           //autoCapitalize: "words", //default is sentences
           //autoCorrect: false, //default is true
         }}
-      />
-      {formIsInvalid && (
-        <Text>Invalid Input Values - Please check your entered Data</Text>
-      )}
+          />
+          {!inputs.amount.isValid <Text></Text>}
       <View style={styles.buttons}>
         <Button mode="flat" onPress={onCancel} style={styles.button}>
           Cancel
