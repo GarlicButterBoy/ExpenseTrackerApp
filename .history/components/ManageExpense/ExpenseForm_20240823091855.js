@@ -1,14 +1,13 @@
 import { StyleSheet, Text, TextInput, View } from "react-native";
 import Input from "./Input";
 import { useState } from "react";
-import Button from "../UI/Button";
-import { getFormattedDate } from "../../util/date";
+import Button from "../components/UI/Button";
 
-function ExpenseForm({ onCancel, onSubmit, submitButtonLabel, defaultValues }) {
+function ExpenseForm() {
   const [inputValues, setInputValues] = useState({
-    amount: defaultValues ? defaultValues.amount.toString() : "",
-    date: defaultValues ? getFormattedDate(defaultValues.date) : "",
-    description: defaultValues ? defaultValues.description : "",
+    amount: "",
+    date: "",
+    description: "",
   });
 
   function inputChangedHandler(inputIdentifier, enteredValue) {
@@ -18,16 +17,6 @@ function ExpenseForm({ onCancel, onSubmit, submitButtonLabel, defaultValues }) {
         [inputIdentifier]: enteredValue,
       };
     });
-  }
-
-  function submitHandler() {
-    const expenseData = {
-      amount: +inputValues.amount,
-      date: new Date(inputValues.date),
-      description: inputValues.description,
-    };
-
-    onSubmit(expenseData);
   }
 
   return (
@@ -67,11 +56,11 @@ function ExpenseForm({ onCancel, onSubmit, submitButtonLabel, defaultValues }) {
         }}
       />
       <View style={styles.buttons}>
-        <Button mode="flat" onPress={onCancel} style={styles.button}>
+        <Button mode="flat" onPress={cancelHandler} style={styles.button}>
           Cancel
         </Button>
-        <Button onPress={submitHandler} style={styles.button}>
-          {submitButtonLabel}
+        <Button onPress={confirmHandler} style={styles.button}>
+          {isEditing ? "Update" : "Add"}
         </Button>
       </View>
     </View>

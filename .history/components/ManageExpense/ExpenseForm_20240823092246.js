@@ -2,13 +2,12 @@ import { StyleSheet, Text, TextInput, View } from "react-native";
 import Input from "./Input";
 import { useState } from "react";
 import Button from "../UI/Button";
-import { getFormattedDate } from "../../util/date";
 
-function ExpenseForm({ onCancel, onSubmit, submitButtonLabel, defaultValues }) {
+function ExpenseForm({ onCancel, onSubmit, submitButtonLabel }) {
   const [inputValues, setInputValues] = useState({
-    amount: defaultValues ? defaultValues.amount.toString() : "",
-    date: defaultValues ? getFormattedDate(defaultValues.date) : "",
-    description: defaultValues ? defaultValues.description : "",
+    amount: "",
+    date: "",
+    description: "",
   });
 
   function inputChangedHandler(inputIdentifier, enteredValue) {
@@ -21,13 +20,21 @@ function ExpenseForm({ onCancel, onSubmit, submitButtonLabel, defaultValues }) {
   }
 
   function submitHandler() {
-    const expenseData = {
-      amount: +inputValues.amount,
-      date: new Date(inputValues.date),
-      description: inputValues.description,
-    };
+    if (isEditing) {
+      expensesCtx.updateExpense(editedExpenseId, {
+        description: "Test!!!!!",
+        amount: 39.99,
+        date: new Date("2024-08-20"),
+      });
+    } else {
+      expensesCtx.addExpense({
+        description: "Test",
+        amount: 19.99,
+        date: new Date("2024-08-21"),
+      });
+    }
 
-    onSubmit(expenseData);
+    navigation.goBack();
   }
 
   return (

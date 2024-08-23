@@ -7,7 +7,7 @@ import { getFormattedDate } from "../../util/date";
 function ExpenseForm({ onCancel, onSubmit, submitButtonLabel, defaultValues }) {
   const [inputValues, setInputValues] = useState({
     amount: defaultValues ? defaultValues.amount.toString() : "",
-    date: defaultValues ? getFormattedDate(defaultValues.date) : "",
+    date: defaultValues ? getFormattedDate : "",
     description: defaultValues ? defaultValues.description : "",
   });
 
