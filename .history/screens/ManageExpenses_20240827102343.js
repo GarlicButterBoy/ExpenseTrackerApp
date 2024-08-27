@@ -37,7 +37,7 @@ function ManageExpenses({ route, navigation }) {
     if (isEditing) {
       expensesCtx.updateExpense(editedExpenseId, expenseData);
     } else {
-      storeExpense(expenseData);
+      storeExpense()
       expensesCtx.addExpense(expenseData);
     }
 
